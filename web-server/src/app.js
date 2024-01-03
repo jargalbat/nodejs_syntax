@@ -7,9 +7,10 @@ const forecast = require('./utils/forecast')
 
 // Init Express
 const app = express()
+const port = process.env.PORT || 3000
 
 // Default paths for Express config
-console.log(__filename)
+// console.log(__filename)
 const publicDirectoryPath = path.join(__dirname, '../public')
 const viewsPath = path.join(__dirname, '../templates/views')
 const partialsPath = path.join(__dirname, '../templates/partials')
@@ -53,7 +54,7 @@ app.get('/help', (req, res) => {
 })
 
 app.get('/weather', (req, res) => {
-    console.log(req.query)
+    // console.log(req.query)
 
     if (!req.query.address) {
         return res.send({
@@ -113,6 +114,6 @@ app.get('*', (req, res) => {
 // Start server
 // node src/app.js
 // nodemon src/app.js -e js,hbs
-app.listen(3000, () => {
-    console.log('Server is up on port 3000.')
+app.listen(port, () => {
+    // console.log('Server is up on port ' + port)
 })

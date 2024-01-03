@@ -39,7 +39,7 @@ yargs.command({
     }
 })
 // 
-node app.js add --title="Shopping list" --body="Хааяа би муу байж болох уу?"
+// node app.js add --title="Shopping list" --body="Хааяа би муу байж болох уу?"
 // Create remove command
 yargs.command({
     command: 'remove',
